@@ -29,3 +29,7 @@ function next(){
 	this.index++;
 	return this.string;
 }
+
+
+
+

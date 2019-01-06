@@ -12,24 +12,22 @@
  * var anagrams = allAnagrams('abc');
  * console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
  */
-
+ function swap (arr, a, b) {
+ 	var temp = arr[a];
+ 	arr[a] = arr[b];
+ 	arr[b] = temp;
+ 	return arr;
+ }
  function allAnagrams (str) {
- 	var result = [];
- 	var string1 = "";
- 	var string2 = "";
+ 	var result = new Array();
+ 	str=str.split("");
  	for (var i = 0; i < str.length; i++) {
- 		string1 = str[i];
- 		string2 = str[i];
- 		var str2 = str.replace(str[i], "");
- 		for (var j = 0; j < str2.length; j++) {
- 			string1 += str2[j];
+ 		for (var j = 0; j < str.length; j++) {
+ 			var element = swap(str, i, j).join("");
+ 			if(!result.includes(element)){
+ 				result.push(element)
+ 			}
  		}
- 		str2 = str2.split("").reverse().join("");
- 		for (var x = 0; x < str2.length; x++) {
- 			string2 += str2[x]
- 		}
- 		result.push(string1);
- 		result.push(string2);
  	}
  	return result;
  }
