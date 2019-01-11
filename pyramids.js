@@ -26,16 +26,20 @@ pyramid(750); // should === 12
 pyramid(1666); // should === 16
 */
 
-
 function pyramid (cans) {
-	var counter = 0;
+	var temp = "";
 	var index1 = 1;
 	var index2 = 1;
 	for (var i = 0; i < cans; i+=index2) {
 		index2 = Math.pow(index1, 2)
-		counter++;
+		temp += index2 + '\n';
 		index1++;
-		console.log(Math.pow(counter, 2))
 	}
-	return counter;
+	return temp;
 }
+
+
+
+
+
+
