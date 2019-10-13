@@ -18,7 +18,7 @@ function firstNonRepeatedCharacter(string) {
 			return arr[i-1];
 		}
 	}
-	return "sorry";
+	return "Sorry";
 }
 
 // function escapeRegExp(str) {
