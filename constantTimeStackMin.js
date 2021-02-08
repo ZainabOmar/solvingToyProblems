@@ -18,22 +18,33 @@
   */
   var Stack = function() {
 
+    this.storage = [];
+
   // add an item to the top of the stack
     this.push = function(value) {
-      console.log(this);
+      this.storage.push(value);
+      console.log(this.storage);
     };
 
   // remove an item from the top of the stack
     this.pop = function() {
+      return this.storage.pop();
     };
 
   // return the number of items in the stack
     this.size = function() {
+      return this.storage.length;
     };
   
   // return the minimum value in the stack
     this.min = function() {
-
+      var minimum = this.storage[0];
+      for(var i = 0; i <= this.storage.length; i++){
+        if(minimum > this.storage[i]){
+        minimum = this.storage[i];
+    }
+  }
+  return minimum; 
     };
 
   };
