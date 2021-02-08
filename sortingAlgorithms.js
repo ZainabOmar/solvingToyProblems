@@ -27,8 +27,6 @@ return arr;
 
 function selectionSort (arr){
 
-//var flag = true;
-// debugger;
 var min = function (array){
 	var minimum = array[0];
 	for(var i = 0; i <= array.length; i++){
@@ -46,18 +44,12 @@ if(arr.length === 0 || arr.length === 1){
 	
   for (var i = 0; i < arr.length; i++) {
   	var slicedArr = arr.slice(i, arr.length);
-  	for(var t = 0; t <= slicedArr.length; t++){
   		var mini = min(slicedArr);
-  		var index = slicedArr.indexOf(mini);
-  		var firstEle = slicedArr[0];
-  		console.log(slicedArr);
-  		console.log(index, mini, firstEle);
-  		console.log(arr);
+  		var index = arr.indexOf(mini);
+  		var firstEle = arr[i];
   		arr[i] = mini;
   		arr[index] = firstEle;
   	}
-  }
-
 return arr;
 }
 
